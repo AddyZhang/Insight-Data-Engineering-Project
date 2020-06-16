@@ -6,16 +6,41 @@ import time
 import boto3
 
 client = boto3.client('kinesis')
-
+    
 def getReferrer():
-    x = random.randint(1,5)
+    
+    # create data directory
+    data = {}
+    
+    # session id
+    x = random.randint(1,6)
     x = x*50 
     y = x+30 
-    data = {}
-    data['USER_ID'] = random.randint(x,y)
-    data['DEVICE_ID'] = random.choice(['mobile','computer', 'tablet', 'mobile','computer'])
-    data['CLIENT_EVENT'] = random.choice(['beer_vitrine_nav','beer_checkout','beer_product_detail',
-    'beer_products','beer_selection','beer_cart'])
+    data['SESSION_ID'] = random.randint(x,y)
+    
+    # item id
+    data['ITEM_ID'] = random.randint(x,y)
+    
+    # catogory
+    real_category = random.randint(1,12)
+    brand = random.randint(10**8,10**10-1) # 8-10 digits
+    if x == 50:
+        data['CATEGORY'] = 'MISSING_VALUE'
+    elif x == 100:
+        data['CATEGORY'] = 'SPEICAL_OFFER'
+    elif x == 150:
+        data['CATEGORY'] = 'FURNITURE'
+    elif x == 200:
+        data['CATEGORY'] = 'ELECTRONICS'
+    elif x == 250:
+        data['CATEGORY'] = 'SPORTS'
+    else:
+        data['CATEGORY'] = 'LIFE_GOODS'
+    print(x)
+    print(data['CATEGORY'])
+    # data['CATEGORY'] = random.choice([0, 's', real_category, brand])
+    
+    # timestamp
     now = datetime.datetime.now()
     str_now = now.isoformat()
     data['CLIENT_TIMESTAMP'] = str_now
@@ -23,9 +48,9 @@ def getReferrer():
 
 def lambda_handler(event, context):
     
-        
         while True:
             client.put_record(
-                StreamName='streaming_data_test',
+                StreamName='ingest-lambda-click-streaming',
                 Data=json.dumps(getReferrer()),
-                PartitionKey='partitionkey')
+                PartitionKey='partitionkey_1')
+
