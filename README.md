@@ -11,7 +11,7 @@
 
 
 ### System Design Diagram
-<img src="https://github.com/AddyZhang/Insight-Data-Engineering-Project/blob/master/myimage/system_design_1.png">
+<img src="https://github.com/AddyZhang/Insight-Data-Engineering-Project/blob/master/myimage/system_design.png">
 
 ### Workflow
 1. Produce data on Lambda `ingestion/prdocuer.py`
