@@ -1,4 +1,6 @@
 # Insight-Data-Engineering-Project
+
+### Business Problem
 `Situation`  Global e-commerce sales are expected to top $4.2 trillion USD in 2020, but 80% e-commerce businesses failed in the past. 
 
 `Challenge`  E-commerce managements don’t know how to turn site visits into value. In plain language, they don’t know what customers want and when they want.
