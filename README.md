@@ -8,8 +8,8 @@ ksdnfsndf
 ### Workflow
 1. Produce data on Lambda `ingestion/prdocuer.py`
 2. Ingest data on Kinesis Data Stream (kds)
-3. Check if there is missing attribute or extra attributes on Lambda (data-processing/kds_error_handle.py)
-4. Process streaming data (data-processing/streaming_query.sql) on Kinesis Data Analytics (kda)
-5. Push data from kds to elasticsearch for storage (database-scripts)
+3. Check if there is missing attribute or extra attributes on Lambda `data-processing/kds_error_handle.py`
+4. Process streaming data on Kinesis Data Analytics (kda) `data-processing/streaming_query.sql`
+5. Push data from kds to elasticsearch for storage on Lambda `database-scripts/kds-to-es.py`
 6. Visulize on Kibana (no code needed)
 
