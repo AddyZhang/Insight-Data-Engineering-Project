@@ -3,6 +3,12 @@
 
 `Challenge`  E-commerce managements don’t know how to turn site visits into value. In plain language, they don’t know what customers want and when they want.
 
+`Solution`   The management team will be able to monitor customer clicks  in real-time to understand what and when customers want. 
+
+`Scope of Project`   Provide real-time dashboard showing trending items for each category in specific time  interval.
+
+`Benefits for Management`   Instantly generate customer shopping patterns & recommend trending items to users
+
 
 ### System Design Diagram
 <img src="https://github.com/AddyZhang/Insight-Data-Engineering-Project/blob/master/myimage/system_design_1.png">
